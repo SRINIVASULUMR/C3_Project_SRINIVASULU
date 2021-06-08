@@ -28,7 +28,7 @@ class RestaurantTest {
     	Restaurant res = Mockito.spy(restaurant);
         Mockito.when(!res.isRestaurantOpen()).thenReturn(false);
         
-        assertFalse(!res.isRestaurantOpen());
+        assertFalse(res.isRestaurantOpen());
 
     }
 
