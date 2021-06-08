@@ -20,7 +20,9 @@ class RestaurantServiceTest {
         LocalTime closingTime = LocalTime.parse("22:00:00");
     	restaurant =new Restaurant("Amelie's cafe","Chennai",openingTime,closingTime);
 
-    	assertEquals(restaurant, service.getRestaurants());
+    	assertNotEquals(restaurant, service.getRestaurants());
+    	
+    	fail();
     	
     	assertThrows(restaurantNotFoundException.class,()->service.findRestaurantByName("Pantry d'or"));
     }
@@ -32,7 +34,9 @@ class RestaurantServiceTest {
         LocalTime closingTime = LocalTime.parse("22:00:00");
     	restaurant =new Restaurant("Murugesa","Chennai",openingTime,closingTime);
     	
-    	assertNotEquals(restaurant, service.getRestaurants());
+    	assertEquals(restaurant, service.getRestaurants());
+    	
+    	fail();
     	
     	assertThrows(restaurantNotFoundException.class,()->service.findRestaurantByName(restaurant.getName()));
     }

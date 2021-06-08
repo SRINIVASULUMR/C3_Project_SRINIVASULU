@@ -16,9 +16,11 @@ class RestaurantTest {
     public void is_restaurant_open_should_return_true_if_time_is_between_opening_and_closing_time(){
 
     	Restaurant res = Mockito.spy(restaurant);
-        Mockito.when(res.isRestaurantOpen()).thenReturn(true);
+        Mockito.when(res.isRestaurantOpen()).thenReturn(false);
+        assertFalse(res.isRestaurantOpen());
         
-        assertTrue(res.isRestaurantOpen());
+        fail();
+        
     }
 
     @Test
@@ -26,10 +28,12 @@ class RestaurantTest {
 
 
     	Restaurant res = Mockito.spy(restaurant);
-        Mockito.when(!res.isRestaurantOpen()).thenReturn(false);
+        Mockito.when(!res.isRestaurantOpen()).thenReturn(true);
         
-        assertFalse(res.isRestaurantOpen());
+        assertTrue(!res.isRestaurantOpen());
 
+        fail();
+        
     }
 
     //<<<<<<<<<<<<<<<<<<<<<<<<<OPEN/CLOSED>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
